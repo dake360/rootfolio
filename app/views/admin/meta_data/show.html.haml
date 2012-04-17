@@ -1,0 +1,6 @@
+.meta-data
+  %h2
+    = @meta_datum.name
+    = link_to '(edit)', edit_admin_meta_datum_path(@meta_datum)
+  .info
+    %p There are #{@meta_datum.intrigue_items.count} intrigue item(s) using this Meta Data.

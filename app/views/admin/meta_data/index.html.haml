@@ -1,0 +1,11 @@
+%p
+  %strong
+    = link_to 'New Meta Data', new_admin_meta_datum_path
+- @meta_data.each do |meta_data|
+  .meta-data
+    %h2 #{meta_data.name}
+    .info
+      %p There are #{meta_data.intrigue_items.count} intrigue item(s) with this meta data.
+    .actions
+      = link_to 'Edit', edit_admin_meta_datum_path(meta_data)
+      =# link_to 'Delete', admin_intrigue_item_path(intrigue_item)

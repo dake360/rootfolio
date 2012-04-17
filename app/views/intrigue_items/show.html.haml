@@ -1,0 +1,48 @@
+- google_maps!
+- if @intrigue_item.address.mappable?
+  :javascript
+    $(document).ready(function() {
+      Rootfolio.plotIntrigueOnMap(#{@intrigue_item.to_json});
+      Rootfolio.moveMap(#{@intrigue_item.address.latitude}, #{@intrigue_item.address.longitude});
+    });
+%h2= @intrigue_item.name
+%p Overall rating: #{ '%.1f' % @intrigue_item.current_rating}
+.address
+  - if @intrigue_item.address.present?
+    %p.street-address= @intrigue_item.address.street_address
+    %p
+      %span.city #{@intrigue_item.address.city},
+      %span.state #{@intrigue_item.address.state}
+      %span.zipcode #{@intrigue_item.address.zipcode}
+  - else
+    No address on file.
+#google-maps.map
+- if current_user && !current_user.has_rated_intrigue?(@intrigue_item)
+  %h3 Create review.
+  = semantic_form_for [@intrigue_item, @intrigue_item.ratings.new] do |f|
+    = f.inputs do
+      = f.input :score, :as => :select, :collection => (1..5).collect
+      = f.input :review, :as => :text
+    = f.buttons :commit
+
+- if current_user
+  %h3 Create comment.
+  = semantic_form_for [@intrigue_item, @intrigue_item.comments.new] do |f|
+    = f.inputs do
+      = f.input :body, :as => :text
+    = f.buttons :commit
+
+- if @intrigue_item.ratings.present?
+  %h2 Ratings
+  - @intrigue_item.ratings.each do |r|
+    %p #{r.user.username} rated this a #{r.score} / 5.
+    %p= r.review
+
+- if @intrigue_item.comments.present?
+  %h2 Comments
+  - @intrigue_item.comments.each do |c|
+    %p
+      = c.user.username
+      - if c.user.has_rated_intrigue?(@intrigue_item)
+        (rated this #{@intrigue_item.interest} #{c.user.rating_for_intrigue(@intrigue_item).score} / 5)
+    %p= c.body

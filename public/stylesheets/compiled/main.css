@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* line 1, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic {
+  /* Formtastic is stupid. */
+}
+/* line 4, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic abbr[title='required'] {
+  color: red;
+}
+/* line 7, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic p.inline-errors {
+  color: red;
+  font-size: small;
+  font-style: italic;
+}
+/* line 15, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs > legend {
+  font-size: 22px;
+  font-style: italic;
+}
+/* line 19, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset > legend.label {
+  display: inline-block;
+}
+/* line 23, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs > ol > li {
+  padding-left: 15px;
+  list-style: none;
+}
+/* line 27, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs > ol > li label {
+  display: inline-block;
+  width: 150px;
+}
+/* line 35, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs li.check_boxes ol, form.formtastic fieldset.inputs li.check_boxes li {
+  display: inline-block;
+}
+/* line 38, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs li.check_boxes ol {
+  padding-left: 150px;
+}
+/* line 41, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs li.check_boxes li > label {
+  width: auto;
+}
+
+/* line 6, ../../../app/stylesheets/main.scss */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* line 10, ../../../app/stylesheets/main.scss */
+h2 {
+  font-size: 24px;
+}
+
+/* line 13, ../../../app/stylesheets/main.scss */
+h3 {
+  font-size: 20px;
+}
+
+/* line 16, ../../../app/stylesheets/main.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 19, ../../../app/stylesheets/main.scss */
+em {
+  font-style: italic;
+}
+
+/* line 24, ../../../app/stylesheets/main.scss */
+#header {
+  margin-bottom: 15px;
+}
+
+/* line 27, ../../../app/stylesheets/main.scss */
+#footer {
+  margin-top: 15px;
+}
+
+/* line 33, ../../../app/stylesheets/main.scss */
+.results {
+  margin-top: 10px;
+}
+
+/* line 37, ../../../app/stylesheets/main.scss */
+.businesses, .products, .people {
+  margin-bottom: 15px;
+}
+/* line 38, ../../../app/stylesheets/main.scss */
+.businesses h2, .products h2, .people h2 {
+  margin-bottom: 5px;
+}
+
+/* line 42, ../../../app/stylesheets/main.scss */
+.business, .person, .product {
+  margin-bottom: 10px;
+}
+
+/* line 46, ../../../app/stylesheets/main.scss */
+.map {
+  width: 400px;
+  height: 400px;
+}
+
+/* line 52, ../../../app/stylesheets/main.scss */
+.intrigue-item.search-result h3 a {
+  color: blue;
+  text-decoration: none;
+}
+/* line 56, ../../../app/stylesheets/main.scss */
+.intrigue-item.search-result h3 a:hover {
+  text-decoration: underline;
+}

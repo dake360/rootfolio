@@ -1,0 +1,59 @@
+@import 'compass';
+@import 'styles/formtastic';
+
+// Common items
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+// Layout specific
+
+#header {
+  margin-bottom: 15px;
+}
+#footer {
+  margin-top: 15px;
+}
+
+// Search pages
+
+.results {
+  margin-top: 10px;
+}
+
+.businesses, .products, .people {
+  h2 { margin-bottom: 5px; }
+  margin-bottom: 15px;
+}
+
+.business, .person, .product {
+  margin-bottom: 10px;
+}
+
+.map {
+  width: 400px;
+  height: 400px;
+}
+
+.intrigue-item.search-result {
+  h3 a {
+    color: blue;
+    text-decoration: none;
+  }
+  h3 a:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,8 @@
+.user
+  .name
+    = user.profile.first_name
+    = user.profile.last_name
+    (#{user.username})
+  .email= user.email
+  - if user.address.present?
+    .address= user.address.city

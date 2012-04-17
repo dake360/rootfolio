@@ -1,0 +1,46 @@
+form.formtastic {
+  // Error handling.
+
+  abbr[title='required'] {
+    color: red;
+  }
+  p.inline-errors {
+    color: red;
+    font-size: small;
+    font-style: italic;
+  }
+
+  // General styling.
+
+  fieldset.inputs > legend {
+    font-size: 22px;
+    font-style: italic;
+  }
+  fieldset > legend.label {
+    display: inline-block;
+  }
+  fieldset.inputs > ol  {
+    & > li {
+      padding-left: 15px;
+      list-style: none;
+
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+    }
+  }
+  /* Formtastic is stupid. */
+  fieldset.inputs li.check_boxes {
+    ol, li {
+      display: inline-block;
+    }
+    ol {
+      padding-left: 150px;
+    }
+    li > label {
+      width: auto;
+    }
+  }
+
+}

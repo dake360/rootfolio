@@ -1,0 +1,17 @@
+%h2 Sign Up
+- resource.build_address unless resource.address.present?
+- resource.build_profile unless resource.profile.present?
+= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  - f.inputs :name => 'Basic' do
+    = f.inputs :email, :username, :password, :password_confirmation
+  - f.inputs :name => 'Additional' do
+    = f.semantic_fields_for :profile do |profile|
+      = profile.inputs :first_name, :last_name
+      = profile.input :gender, :as => :select, :collection => [['Male', 'male'], ['Female', 'female']], :selected => 'male'
+      = profile.input :age
+    = f.semantic_fields_for :address do |address|
+      = address.inputs :city, :state, :zipcode
+  - f.buttons do
+    = f.commit_button 'Sign Up'
+
+= render :partial => "devise/shared/links"

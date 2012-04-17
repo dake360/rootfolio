@@ -1,0 +1,4 @@
+- form.inputs :name => 'Basic' do
+  = form.input :name
+  = form.input :data_type, :as => :select, :collection => MetaData::DATA_TYPES
+= form.buttons :commit

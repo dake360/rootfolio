@@ -1,0 +1,11 @@
+%p
+  Placeholder for a sort button in the future. Eventually.
+%p
+  %strong
+    = link_to 'New Intrigue', new_admin_intrigue_item_path
+- @intrigue_items.each do |intrigue_item|
+  .intrigue-items
+    %h2 #{intrigue_item.name} (#{intrigue_item.interest})
+    .actions
+      = link_to 'Edit', edit_admin_intrigue_item_path(intrigue_item)
+      =# link_to 'Delete', admin_intrigue_item_path(intrigue_item)

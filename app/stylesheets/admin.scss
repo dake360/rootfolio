@@ -1,0 +1,42 @@
+@import 'compass';
+@import 'styles/formtastic';
+
+
+// Common items
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+// Layout specific
+
+#header {
+  margin-bottom: 15px;
+}
+#footer {
+  margin-top: 15px;
+}
+
+// Users section.
+
+.users {
+  .user {
+    margin-bottom: 10px;
+    .name {
+      font-size: 20px;
+      font-style: bold;
+    }
+  }
+}

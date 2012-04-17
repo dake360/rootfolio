@@ -1,0 +1,16 @@
+.intrigue-item.search-result
+  .name
+    %h3= link_to intrigue_item.name, intrigue_item
+    = link_to 'Reviews', intrigue_item
+  .address
+    - if intrigue_item.address.present?
+      %p.street-address= intrigue_item.address.street_address
+      %p
+        %span.city #{intrigue_item.address.city},
+        %span.state #{intrigue_item.address.state}
+        %span.zipcode #{intrigue_item.address.zipcode}
+
+      - if intrigue_item.address.mappable?
+        %p= link_to 'Zoom to', "javascript:Rootfolio.moveMap(#{intrigue_item.address.latitude}, #{intrigue_item.address.longitude})"
+    - else
+      No address on file.

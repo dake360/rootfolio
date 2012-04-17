@@ -1,0 +1,9 @@
+.search
+  %h3 Search
+
+  = form_tag '/search' do
+    keyword
+    = text_field_tag 'q', params[:q] || 'hair'
+    in
+    = text_field_tag 'loc', params[:loc] || 'houston texas'
+    = submit_tag 'Search'

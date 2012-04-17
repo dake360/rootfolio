@@ -1,0 +1,11 @@
+%h2
+  #{@user.email}'s profile.
+  - if current_user == @user
+    = link_to '(edit)', edit_profile_path(current_user)
+
+- if @profile.blank?
+  %strong #{@user.email} hasn't set up a profile yet. Please check back later.
+- else
+  .profile
+    %h2.name #{@profile.first_name} #{@profile.last_name}
+    .bio= @profile.bio

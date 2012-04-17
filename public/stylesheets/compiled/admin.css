@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* line 1, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic {
+  /* Formtastic is stupid. */
+}
+/* line 4, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic abbr[title='required'] {
+  color: red;
+}
+/* line 7, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic p.inline-errors {
+  color: red;
+  font-size: small;
+  font-style: italic;
+}
+/* line 15, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs > legend {
+  font-size: 22px;
+  font-style: italic;
+}
+/* line 19, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset > legend.label {
+  display: inline-block;
+}
+/* line 23, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs > ol > li {
+  padding-left: 15px;
+  list-style: none;
+}
+/* line 27, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs > ol > li label {
+  display: inline-block;
+  width: 150px;
+}
+/* line 35, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs li.check_boxes ol, form.formtastic fieldset.inputs li.check_boxes li {
+  display: inline-block;
+}
+/* line 38, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs li.check_boxes ol {
+  padding-left: 150px;
+}
+/* line 41, ../../../app/stylesheets/styles/_formtastic.scss */
+form.formtastic fieldset.inputs li.check_boxes li > label {
+  width: auto;
+}
+
+/* line 7, ../../../app/stylesheets/admin.scss */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* line 11, ../../../app/stylesheets/admin.scss */
+h2 {
+  font-size: 24px;
+}
+
+/* line 14, ../../../app/stylesheets/admin.scss */
+h3 {
+  font-size: 20px;
+}
+
+/* line 17, ../../../app/stylesheets/admin.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 20, ../../../app/stylesheets/admin.scss */
+em {
+  font-style: italic;
+}
+
+/* line 25, ../../../app/stylesheets/admin.scss */
+#header {
+  margin-bottom: 15px;
+}
+
+/* line 28, ../../../app/stylesheets/admin.scss */
+#footer {
+  margin-top: 15px;
+}
+
+/* line 35, ../../../app/stylesheets/admin.scss */
+.users .user {
+  margin-bottom: 10px;
+}
+/* line 37, ../../../app/stylesheets/admin.scss */
+.users .user .name {
+  font-size: 20px;
+  font-style: bold;
+}

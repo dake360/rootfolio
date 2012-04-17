@@ -1,0 +1,10 @@
+- form.inputs :name => 'Basic' do
+  = form.input :name
+  = form.input :category
+  = form.input :interest, :as => :select, :collection => IntrigueItem::INTRIGUE_TYPES
+- form.inputs :name => 'Address' do
+  = form.semantic_fields_for :address do |address|
+    = render :partial => 'admin/addresses/form', :object => address
+- form.inputs :name => 'Meta Data' do
+  = form.input :meta_data, :as => :check_boxes
+= form.buttons :commit

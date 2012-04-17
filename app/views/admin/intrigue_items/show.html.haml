@@ -1,0 +1,5 @@
+.intrigue-item
+  %h2
+    = @intrigue_item.name
+    = link_to '(edit)', edit_admin_intrigue_item_path(@intrigue_item)
+  = render :partial => 'admin/addresses/address', :object => (@intrigue_item.address || Address.new)

@@ -1,0 +1,42 @@
+- google_maps!
+-# Yeah yeah, I know. Prototype, remember?
+- if @intrigue_items.present?
+  - @intrigue_items.select { |i| i.address.present? && i.address.mappable? }.each do |intrigue_item|
+    :javascript
+      $(document).ready(function() {
+        Rootfolio.plotIntrigueOnMap(#{intrigue_item.to_json});
+      });
+- if @latlng
+  :javascript
+    $(document).ready(function() {
+      Rootfolio.moveMap(#{@latlng.first}, #{@latlng.last});
+    });
+%h2
+  You searched for
+  %em #{params[:q]}
+  - if params[:loc].present?
+    within 100 miles of #{params[:loc]}:
+= render :partial => 'shared/search'
+#google-maps.map
+- @places = @intrigue_items.select { |i| i.interest == 'place' }
+- @people = @intrigue_items.select { |i| i.interest == 'person' }
+- @products = @intrigue_items.select { |i| i.interest == 'product' }
+.results
+  .places
+    %h2 Places:
+    - if @places.present?
+      = render :partial => 'intrigue_item', :collection => @places
+    - else
+      No places found.
+  .products
+    %h2 Products:
+    - if @products.present?
+      = render :partial => 'intrigue_item', :collection => @products
+    - else
+      No products found.
+  .people
+    %h2 People:
+    - if @people.present?
+      = render :partial => 'intrigue_item', :collection => @people
+    - else
+      No people found.

@@ -1,0 +1,11 @@
+%p
+  Placeholder for a sort button in the future. Eventually.
+%p
+  %strong
+    = link_to 'New Category', new_admin_category_path
+- @categories.each do |category|
+  .categories
+    %h2= category.name
+    .actions
+      = link_to 'Edit', edit_admin_category_path(category)
+      =# link_to 'Delete', admin_category_path(category)

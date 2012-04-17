@@ -1,0 +1,8 @@
+%h2 Editing your profile.
+= semantic_form_for @profile, :url => profile_path(@user) do |f|
+  = hidden_field_tag '_method', 'put' # ... what?
+  = f.inputs :name => 'A little about yourself' do
+    = f.inputs :first_name, :last_name
+    = f.input :bio, :as => :text
+  = f.buttons do
+    = f.commit_button 'Update Profile'
