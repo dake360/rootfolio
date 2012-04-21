@@ -13,19 +13,24 @@
     #container
       #header
         %h1 #{link_to 'rootfolio', '/'} - functional iteration #2
-        = link_to 'Home', root_path
-        |
-        - if user_signed_in?
-          - if current_user.is_admin?
-            = link_to 'Admin Pages', admin_home_path
+        #user-nav
+          = link_to 'Home', root_path
+          |
+          - if user_signed_in?
+            - if current_user.is_admin?
+              = link_to 'Admin Pages', admin_home_path
+              |
+            = link_to 'My Profile', profile_path(current_user)
             |
-          = link_to 'My Profile', profile_path(current_user)
-          |
-          = link_to 'Sign out', destroy_user_session_path
-        - else
-          = link_to 'Sign in', new_user_session_path
-          |
-          = link_to 'Sign up', new_user_registration_path
+            = link_to 'Sign out', destroy_user_session_path
+          - else
+            = link_to 'Sign in', new_user_session_path
+            |
+            = link_to 'Sign up', new_user_registration_path
+        #intrigue-nav
+          = link_to 'All', intrigue_items_path
+          - IntrigueItem::INTRIGUE_TYPES.each do |it|
+            = link_to it.pluralize.titleize, by_type_intrigue_items_path(it)
         - if notice
           %p * * *  #{notice} * * *
       #content

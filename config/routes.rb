@@ -4,6 +4,9 @@ Irootd::Application.routes.draw do
   resources :profiles
 
   resources :intrigue_items do
+    collection do
+      match '/by_type/:intrigue', :to => 'intrigue_items#index_by_intrigue', :as => :by_type
+    end
     resources :ratings
     resources :comments
   end

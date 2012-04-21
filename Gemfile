@@ -2,18 +2,21 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
-gem "mongoid", "2.0.0.beta.20"
-gem "bson_ext", "1.1.5"
+gem "mongoid", :git => 'git://github.com/mongoid/mongoid.git', :ref => "9137c4624fcdf3020b16"
+gem "bson_ext", "1.2.2"
 
 gem 'compass', '>= 0.10.6'
 gem 'haml'
-gem 'formtastic', '~> 1.1.0'
+gem 'formtastic', :git => 'git://github.com/radicaled/formtastic.git'
+#gem 'formtastic',  :path => '~/Projects/formtastic'
 
 gem 'devise'
 
 gem 'jquery-rails', '>= 0.2.6'
 
 gem 'typhoeus'
+
+gem 'will_paginate'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

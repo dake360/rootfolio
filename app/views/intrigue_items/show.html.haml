@@ -34,13 +34,13 @@
 
 - if @intrigue_item.ratings.present?
   %h2 Ratings
-  - @intrigue_item.ratings.each do |r|
+  - @intrigue_item.ratings.select { |r| !r.new_record? }.each do |r|
     %p #{r.user.username} rated this a #{r.score} / 5.
     %p= r.review
 
 - if @intrigue_item.comments.present?
   %h2 Comments
-  - @intrigue_item.comments.each do |c|
+  - @intrigue_item.comments.select { |c| !c.new_record? }.each do |c|
     %p
       = c.user.username
       - if c.user.has_rated_intrigue?(@intrigue_item)
