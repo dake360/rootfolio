@@ -1,19 +1,19 @@
 defaults: &defaults
-  host: localhost
-  # slaves:
-  #   - host: slave1.local
-  #     port: 27018
-  #   - host: slave2.local
-  #     port: 27019
+  host: staff.mongohq.com
+  port: 10096
+  username: heroku
+  password: godpowers24
 
 development:
   <<: *defaults
-  database: irootd_development
+  database: app4067695
 
 test:
   <<: *defaults
-  database: irootd_test
+  database: app4067695
 
 # set these environment variables on your prod server
 production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+  <<: *defaults
+  database: app4067695
+
